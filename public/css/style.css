@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding: 0;
+}
+@media
+only screen and(max-width:760px),
+
+
+/* table tr td{
+  
+    width: 100%;
+   } */
+   .tablePerdin{
+    border: solid black; 
+   
+    margin-top: 1rem; 
+    margin-left: 3rem; 
+   
+     width: 95%;
+    padding-left: 5px;
+   }
+
+   tablePerdin>table{
+    width: 90%;
+    display: flex;
+   }
+   table  td{
+ 
+    border: 2px solid ;
+    width: 90%;
+   }
+   table  tr{
+ 
+    border: 2px solid black ;
+    width: 100%;
+    display: flex;
+   }
+   table  th{
+    
+    border: 2px solid ;
+    width: 90%;
+   }
+
+
+.buttonCreate{
+    border:solid rgb(41, 146, 149);
+    background-color: rgb(248, 248, 248);
+    padding: 3px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: arial;
+    width: 11rem;
+    margin-left: 50rem;
+    margin-top: 6rem;
+    
+}
+
+.buttonCreate a{
+    text-decoration: none;
+}
+
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
