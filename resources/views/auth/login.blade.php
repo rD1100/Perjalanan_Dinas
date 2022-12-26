@@ -1,12 +1,10 @@
+
 @extends('layouts.authPerdin.main')
-@section('contentAuth')
-<div class="card-body p-0">
-    
-    <!-- Nested Row within Card Body -->
-    <div class="row">
-        
-        <div class="col-lg"> 
-            <div class="p-5">
+@section('content')
+    <div class="login-box">
+
+        <div class="card card-outline card-info">
+
                 @if (Session::has('successSignup'))              
                     <div class="alert alert-success  " role="alert">
                         {{ Session::get('successSignup') }}
@@ -22,50 +20,46 @@
                     </div>
 
                 @endif
-                <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                </div>
-   
-                       <form class="user" method="post" action="{{ url('signIn') }}">
-                            @csrf
-                            {{-- form group --}}
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter Email Address..." value="{{ old('email') }}"required autocomplete="email" autofocus>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required autocomplete="current-password">
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">
-                                Login
-                            </button>
-        
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                           
-                            {{-- <a class="small" href="{{ ('password.request') }}">Lupa password?</a> --}}
-                            
-                        </div>
-     
-                        <div class="text-center">
-                            <a class="middle" href="{{ url('registration') }}">Buat akun!</a>
-                        </div>
-                    
+            <div class="card-header text-center">
+                <img src="/img/Logo ars 2015.png" alt="" width="60%">
+            </div>
+            <div class="card-body">
+            
+                <form class="user" method="post" action="{{ url('signIn') }}">
+                    @csrf
+                    {{-- form group --}}
+                    <div class="form-group">
+                        <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter Email Address..." value="{{ old('email') }}"required autocomplete="email" autofocus>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-info btn-user btn-block">
+                        Login
+                    </button>
 
-            </div> 
-        
-        </div> 
-
+                    <hr>
+                                        
+                    <div class="text-center">
+                        <a class="middle" href="{{ url('registration') }}">Belum punya akun!</a>
+                    </div>
+                </form>
+            </div>
+      
+        </div>
+      
     </div>
-</div>
 @endsection
+
+
+   

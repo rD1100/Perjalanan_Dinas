@@ -65,7 +65,7 @@
                 
                     ?> 
             
-                {{-- get data  latitude longtitude hometown  --}}
+                    {{-- get data  latitude longtitude hometown  --}}
                     
                     <?php 
                     $arrayTown=array();
@@ -90,7 +90,7 @@
                         {{-- @endforeach --}}
                         {{-- <p>longtitude:{{ }}</p> --}}
      
-                    </div>
+                </div>
                     
                      {{-- get data latitude longtitude destinationtown  --}}
                      @foreach ($DestinationtownQuery as $item)
@@ -188,63 +188,32 @@
                                                  
                                              }
                                              
-                                             .reject{
-                                                 background-color: rgb(192, 13, 13);
-                                                 color: white;
-                                                  font-weight: 400;
-                                                   border: none;
-                                                  padding: 2% 8% 2% 8%;
-                                                  font-size: large;
-                                                  border-radius: 6px;
-                                             }
- 
-                                             .approved{
-                                                 background-color: rgb(36, 94, 209);
-                                                 color: white;
-                                                  font-weight: 400;
-                                                   border: none;
-                                                  padding: 2% 3% 2% 8%;
-                                                  font-size: large;
-                                                  border-radius: 6px;
-                                                  text-align: left;
-                                             }
+                                            
  
                                          </style>
-                                         <td>{{ $data->duration }} Hari</td>
+                                         <td>{{ $data->duration }} </td>
                                          <td>
-                                             {{ round($ResultDistanceKm )}} KM
+                                             {{ $convertKM=round($ResultDistanceKm )}} KM
                                              <br>
                                           
                                                <div style="color: rgb(186, 195, 195)">Rp.{{  number_format($budgetJourney, 0, ',', '.') }} -/ Hari</div> 
                                    
                                          </td>
-                                         <td>Rp. {{ number_format($durationResult, 0, ',', '.') }}</td>
+                                         <td>Rp. {{ $billValue=number_format($durationResult, 0, ',', '.') }}</td>
                                      </tr>
                                  </tbody>
                                  
                              </table >
 
                     </div>
+                        <input type="text" style="" value="{{ $convertKM }} KM" name="distance">
+                        <input type="text" name="amount" id="" value="Rp. {{ $billValue }}">
                     <div style="margin-left: 35%">
-                        <input class="reject"  type="submit" name="status" id=""value="Reject">
-                        <input class="approved" type="submit" name="status" id=""value="Approve">
+                        <input class="btn btn-danger"  type="submit" name="status" id=""value="Reject">
+                        <input class="btn btn-primary" type="submit" name="status" id=""value="Approve">
                     </div>
-                </form>
+            </form>
 
-                {{-- <body onload="document.createElement('form').submit.call(document.getElementById('myForm'))"> --}}
-                    {{-- <form id="myForm" name="myForm"  action="{{url ('saveReport') }}" method="POST">
-                        @csrf
-                            <input name="nama" type="text" value="{{ $data->user->name }}" style="display: none">
-                            <input name="Kota_awal" type="text" value="{{ $data->hometown }}" style="display: none">
-                            <input name="kota_tujuan" type="text" value="{{ $data->destination_town }}" style="display: none">
-                            <input name="tanggal_awal" type="text" value="{{ $data->departure_date }}" style="display: none">
-                            <input name="tanggal_akhir" type="text" value="{{ $data->return_date }}" style="display: none">
-                            <input name="comment" type="text" value="{{ $data->comment }}" style="display: none">
-                            <input name="jarak" type="text" value=" {{ round($ResultDistanceKm )}}" style="display: none">
-                            <input name="duration" type="text" value="{{ $data->duration }}" style="display: none">
-                            <input name="money_perdins" type="text" value=" {{ $durationResult }}" style="display: none">
-                        
-                    </form> --}}
                 </body>
             </div>
         </div>

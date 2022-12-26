@@ -5,7 +5,7 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-4 text-gray-800">Perdinku</h1>
-  {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
+ 
 </div>
 
 
@@ -36,7 +36,7 @@
   <div class="row">
     <div style="padding-left: 88%;padding-right: 10px">
       <a href="{{ url('home/create') }}">
-          <button class="btn btn-sm btn-primary mb-3 " data-toggle="modal"  >
+          <button class="btn btn-sm btn-info mb-3 " data-toggle="modal"  >
               <i class="fas fa-plus fa-sm"></i> Tambah Perdin
               
           </button>

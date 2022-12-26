@@ -130,6 +130,8 @@ class MasterKotaController extends Controller
     {
         //get data
         $dataUpdate=[
+            'amount'=>$request->amount,
+            'distance'=>$request->distance,
             'status'=>$request->status
         ];
  

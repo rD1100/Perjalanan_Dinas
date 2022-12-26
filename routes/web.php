@@ -23,7 +23,7 @@ use App\Http\Controllers\AdminController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-route::view('/try','try');
+route::view('/try','loginn');
 route::view('/authT','/layouts/auth/main');
 
 
